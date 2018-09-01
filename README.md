@@ -18,3 +18,5 @@ Neovim uses loactions
 run command in neovim `:PlugInstall` to install the plugins.
 
 run command in neovim `:PlugUpdate` to update the plugins.
+
+Plug in `tagbar` needs `ctags` installed to work.
