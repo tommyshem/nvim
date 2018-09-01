@@ -14,8 +14,7 @@ Plug 'rust-lang/rust.vim'                                 " for rust programming
 call plug#end()
 " }}}
 " neovim settings {{{
-let mapleader=","    " leader is comma
-set encoding=utf8    " encoding to utf8
+let mapleader=","    " leader is a comma
 set modelines=1      " modeline will check last line for vim spiecial comments
 set tabstop=4        " numer of visual spaces per TAB
 set softtabstop=4    " number of spaces in tab when editing
