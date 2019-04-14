@@ -45,7 +45,7 @@ set nocompatible     " not compatible with vi
 set number           " show line numbers
 set ruler            " show ruler
 set showcmd          " show command in bottom bar
-set cursorline!       " turn off highlight current line
+set nocursorline       " turn off highlight current line
 set wildmenu         " visual autocomplete for command menu
 set showmatch        " highlight matching brackets
 set incsearch        " search as characters are entered
