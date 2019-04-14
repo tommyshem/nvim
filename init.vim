@@ -18,7 +18,12 @@ Plug 'majutsushi/tagbar'                                  " for overview panel p
 Plug 'universal-ctags/ctags'                              " needed for above plugin
 Plug 'rust-lang/rust.vim'                                 " for rust programming
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Complition 
+Plug 'zchee/deoplete-go', { 'do': 'make'}                 " Asynchronous completion for go
 Plug 'itchyny/lightline.vim'                              " for colourful status line
+Plug 'w0rp/ale'                                           " Linting tool
+Plug 'brooth/far.vim'                                     " Find and replace
+Plug 'Raimondi/delimitMate'                               " Auto-close brackets
+Plug 'honza/vim-snippets'                                 " snippets repo
 call plug#end()   
 
 " --------------------=== Neovim settings ===--------------------
@@ -55,15 +60,38 @@ let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
 
-" settings for syntastic plugin
+" syntastic plugin settings
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" settings rust plugin
+" rust plugin settings
 let g:rustfmt_autosave = 1          " rustfmt on save
+
+" Lightline settings
+" ---------------------
+let g:lightline = {
+    \ 'active': {
+    \   'left': [ ['mode', 'paste'],
+    \             ['gitbranch', 'readonly', 'filename', 'modified'],
+    \             ['bufferline']],
+    \  },
+    \  'component': {
+    \     'lineinfo': ' %3l:%-2v',
+    \     'bufferline': '%{bufferline#refresh_status()}%{g:bufferline_status_info.before . g:bufferline_status_info.current . g:bufferline_status_info.after}'
+    \  },
+    \  'component_function': {
+    \     'gitbranch': 'gitbranch#name'
+    \  }
+\ }
+
+" Deoplete settings
+let g:deoplete#enable_at_startup=1
+" deoplete-go settings
+let g:deoplete#sources#go#gocode_binary = '$GOPATH/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 " --------------------=== Nerdtree keybindings ===--------------------
 
