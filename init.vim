@@ -2,12 +2,11 @@
 " Website https://github.com/junegunn/vim-plug/wiki/tips
 " Run :PlugInstall in Neovim editor to load all the plugs for the first time
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.v
-im
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
 " --------------------=== Specify a directory for plugins ===----------------
-set rtp+=~/.local/share/nvim/plugged
+" set rtp+=~/.local/share/nvim/plugged
 call plug#begin('~/.local/share/nvim/plugged')              " Required by Vim Plug
 
 " --------------------=== Code/Project Navigation ===--------------------
