@@ -70,23 +70,6 @@ let g:syntastic_check_on_wq = 0
 " rust plugin settings
 let g:rustfmt_autosave = 1          " rustfmt on save
 
-" Lightline settings
-" ---------------------
-let g:lightline = {
-    \ 'active': {
-    \   'left': [ ['mode', 'paste'],
-    \             ['gitbranch', 'readonly', 'filename', 'modified'],
-    \             ['bufferline']],
-    \  },
-    \  'component': {
-    \     'lineinfo': ' %3l:%-2v',
-    \     'bufferline': '%{bufferline#refresh_status()}%{g:bufferline_status_info.before . g:bufferline_status_info.current . g:bufferline_status_info.after}'
-    \  },
-    \  'component_function': {
-    \     'gitbranch': 'gitbranch#name'
-    \  }
-\ }
-
 " Deoplete settings
 let g:deoplete#enable_at_startup=1
 " deoplete-go settings
