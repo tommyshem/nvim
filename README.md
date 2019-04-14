@@ -5,8 +5,10 @@
 clone github into location `~/.config/`
 
 ```bash
+cd ~/.config/
 git clone https://github.com/tommyshem/nvim.git 
 ```
+
 Neovim uses config file `~/.config/nvim/init.vim`
 
 Neovim uses locations
@@ -15,9 +17,13 @@ Neovim uses locations
 
 `~/.local/share/nvim/site/`
 
+## Install and update plugins
+
 run command in neovim `:PlugInstall` to install the plugins.
 
 run command in neovim `:PlugUpdate` to update the plugins.
+
+## Plugin Notes
 
 Plug in `tagbar` needs `ctags` installed to work.
 
