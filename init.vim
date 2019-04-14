@@ -15,8 +15,8 @@ call plug#end()
 " }}}
 " neovim settings {{{
 let mapleader=","    " leader is a comma
-set modelines=1      " modeline will check last line for vim spiecial comments
-set tabstop=4        " numer of visual spaces per TAB
+set modelines=1      " modeline will check last line for vim special comments
+set tabstop=4        " number of visual spaces per TAB
 set softtabstop=4    " number of spaces in tab when editing
 set expandtab        " when tab key is pressed it is turned to spaces
 " }}}
@@ -25,7 +25,7 @@ set number           " show line numbers
 set ruler            " show ruler
 set showcmd          " show command in bottom bar
 set cursorline       " highlight current line
-set wildmenu         " visual autocomplet for command menu
+set wildmenu         " visual autocomplete for command menu
 set showmatch        " highlight matching brackets
 " }}}
 " Search settings {{{
