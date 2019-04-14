@@ -9,7 +9,7 @@ git clone https://github.com/tommyshem/nvim.git
 ```
 Neovim uses config file `~/.config/nvim/init.vim`
 
-Neovim uses loactions
+Neovim uses locations
 
 `~/.config/nvim/`
 
