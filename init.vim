@@ -29,11 +29,6 @@ Plug 'roxma/nvim-yarp'                                    " Needed for above plu
 Plug 'ncm2/ncm2-bufword'                                  " Required by ncm2
 Plug 'ncm2/ncm2-path'                                     " Required by ncm2
 call plug#end()   
-
-
-
-
-
   
 " --------------------=== Neovim settings ===--------------------
 
@@ -50,7 +45,7 @@ set nocompatible     " not compatible with vi
 set number           " show line numbers
 set ruler            " show ruler
 set showcmd          " show command in bottom bar
-set cursorline       " highlight current line
+set cursorline!       " turn off highlight current line
 set wildmenu         " visual autocomplete for command menu
 set showmatch        " highlight matching brackets
 set incsearch        " search as characters are entered
