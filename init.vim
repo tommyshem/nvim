@@ -13,9 +13,10 @@ call plug#begin('~/.local/share/nvim/plugged')              " Required by Vim Pl
 " --------------------=== Code/Project Navigation ===--------------------
 " Add all your plugins here
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }   " for file panel navigation
-Plug 'valloric/youcompleteme'                             " for syntax completion
+" Plug 'valloric/youcompleteme'                             " for syntax completion
 Plug 'vim-syntastic/syntastic'                            " for syntax error highlighting
 Plug 'majutsushi/tagbar'                                  " for overview panel press F8
+Plug 'universal-ctags/ctags'                              " needed for above plugin
 Plug 'rust-lang/rust.vim'                                 " for rust programming
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Complition 
 Plug 'itchyny/lightline.vim'                              " for colourful status line
@@ -50,17 +51,20 @@ set nowrap      " no wrap
 
 " put your plugin settings here
 
-" set lightline plugin theme
+" settings for lightline plugin theme
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
 
-" set syntastic plugin
+" settings for syntastic plugin
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" settings rust plugin
+let g:rustfmt_autosave = 1          " rustfmt on save
 
 " --------------------=== Nerdtree keybindings ===--------------------
 
