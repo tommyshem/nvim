@@ -12,20 +12,29 @@ call plug#begin('~/.local/share/nvim/plugged')              " Required by Vim Pl
 " --------------------=== Code/Project Navigation ===--------------------
 " Add all your plugins here
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }   " for file panel navigation
-" Plug 'valloric/youcompleteme'                             " for syntax completion
 Plug 'vim-syntastic/syntastic'                            " for syntax error highlighting
 Plug 'majutsushi/tagbar'                                  " for overview panel press F8
 Plug 'universal-ctags/ctags'                              " needed for above plugin
 Plug 'rust-lang/rust.vim'                                 " for rust programming
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Complition 
 Plug 'zchee/deoplete-go', { 'do': 'make'}                 " Asynchronous completion for go
 Plug 'itchyny/lightline.vim'                              " for colourful status line
 Plug 'w0rp/ale'                                           " Linting tool
 Plug 'brooth/far.vim'                                     " Find and replace
 Plug 'Raimondi/delimitMate'                               " Auto-close brackets
 Plug 'honza/vim-snippets'                                 " snippets repo
+" Plug 'valloric/youcompleteme'                             " for syntax completion
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Complition 
+Plug 'ncm2/ncm2'                                          " Completion
+Plug 'roxma/nvim-yarp'                                    " Needed for above plugin
+Plug 'ncm2/ncm2-bufword'                                  " Required by ncm2
+Plug 'ncm2/ncm2-path'                                     " Required by ncm2
 call plug#end()   
 
+
+
+
+
+  
 " --------------------=== Neovim settings ===--------------------
 
 let mapleader=","    " leader is a comma
@@ -55,24 +64,30 @@ set nowrap      " no wrap
 
 " put your plugin settings here
 
-" settings for lightline plugin theme
+" ------ lightline plugin settings
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
 
-" syntastic plugin settings
+" ------ syntastic plugin settings
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" rust plugin settings
+" ------ rust plugin settings
 let g:rustfmt_autosave = 1          " rustfmt on save
 
-" Deoplete settings
+" ------ ncm2 plugin settings
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
+" ------- Deoplete settings
 let g:deoplete#enable_at_startup=1
-" deoplete-go settings
 let g:deoplete#sources#go#gocode_binary = '$GOPATH/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
